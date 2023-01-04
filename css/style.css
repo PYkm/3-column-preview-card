@@ -1,0 +1,128 @@
+:root{
+  --main-bg-color: hsl(0, 0%, 95%);
+  --sedans-bg-color: hsl(31, 77%, 52%);
+  --suvs-bg-color: hsl(184, 100%, 22%);
+  --luxury-bg-color: hsl(179, 100%, 13%);
+  --font-color: hsla(0, 0%, 100%, 0.75);
+  --heading-font-family: 'Big Shoulders Display', 'Verdana', sans-serif;
+  --p-font-family: 'Lexend Deca', 'Verdana', sans-serif;
+}
+
+.attribution { color: var(--luxury-bg-color); font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+article{
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  justify-content: space-between;
+}
+
+article > a{
+  border: 2px currentColor solid;
+  background: var(--main-bg-color);
+  border-radius: 2em;
+  padding: 1em 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 62%;
+}
+
+article > a:hover{
+  background-color: transparent;
+  color: currentColor;
+}
+
+article[data-columns="1"] {
+  background-color: var(--sedans-bg-color);
+}
+
+article[data-columns="2"] {
+  background-color: var(--suvs-bg-color);
+
+}
+
+article[data-columns="3"] {
+  background-color: var(--luxury-bg-color);
+}
+
+h2{
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+html{
+  font-size: 0.9375em;
+}
+
+body{
+  align-items: center;
+  background-color: var(--main-bg-color);
+  color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--p-font-family);
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 2em 0;
+  min-height: 100vh;
+}
+
+p{
+  color: var(--font-color);
+}
+
+main{
+  border-radius: 0.5em;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 30em;
+  width: 80%;
+}
+
+.sedans > a{
+    color: var(--sedans-bg-color);
+}
+
+.suvs > a{
+    color: var(--suvs-bg-color);
+}
+
+.luxury > a{
+    color: var(--luxury-bg-color);
+}
+
+.sedans::before{
+  content: url('../images/icon-sedans.svg');
+}
+
+.suvs::before{
+  content: url('../images/icon-suvs.svg');
+}
+
+.luxury::before{
+  content: url('../images/icon-luxury.svg');
+}
+
+/* large screen */
+@media (min-width: 65.75em) {
+  article{
+    padding: 5%;
+  }
+  article > a{
+    margin-top: 31%;
+    width: 72%;
+  }
+  h2{
+    font-size: 3em;
+  }
+  main{
+    display: flex;
+    max-width: 100%;
+  }
+}
